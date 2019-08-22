@@ -9,7 +9,7 @@
         $hash = hash("sha256",str_replace(",","",$data).$secret.$previous_hash);
         $previous_hash = $hash;
         if($hash != $splitted_data[4]){
-            file_put_contents("hash_checker.log",$data."|".$splitted_data[4]."|".$hash."\r\n",FILE_APPEND);
+            file_put_contents("hash_checker.log",$splitted_data[0]."|".$splitted_data[4]."|".$hash."\n",FILE_APPEND);
         }
     }
 ?>
